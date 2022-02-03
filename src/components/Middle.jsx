@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const MiddleComp = styled.div`
   grid-area: middle;
-  background-color: #58d22f;
+  background-color: #e6e6e6;
 `;
 
 export const Middle = () => {

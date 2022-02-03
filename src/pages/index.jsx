@@ -9,13 +9,11 @@ import Right from "../components/Right";
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: 1.3fr 2fr 1.3fr;
   grid-template-rows: 80px calc(100vh - 80px) 1fr;
   grid-template-areas:
     "header header header"
     "left middle right";
-
-  /* overflow-y: hidden; */
 `;
 
 export default function Home() {

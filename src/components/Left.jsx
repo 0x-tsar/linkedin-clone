@@ -13,6 +13,7 @@ export const Panel = styled.div`
   height: 600px;
   margin: 20px auto;
 `;
+
 export const Panel2 = styled.div`
   background-color: white;
   border-radius: 15px;
@@ -40,11 +41,12 @@ export const Left = () => {
               {/* <img src="" alt="" /> */}
               <div
                 style={{
-                  backgroundColor: "blue",
+                  backgroundColor: "blueviolet",
                   width: "100%",
                   height: "120px",
                   margin: "0 auto",
                   paddingTop: "50px",
+                  borderRadius: "15px 15px 0 0",
                   marginBottom: "50px",
                 }}
               >

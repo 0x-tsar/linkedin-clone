@@ -14,6 +14,8 @@ export const Container = styled.div`
   grid-template-areas:
     "header header header"
     "left middle right";
+
+  /* overflow-y: hidden; */
 `;
 
 export default function Home() {

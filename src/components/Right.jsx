@@ -116,6 +116,7 @@ export const Right = () => {
               padding: "0px",
               margin: "0px",
               marginRight: "10px",
+              cursor: "pointer",
             }}
           >
             ℹ️

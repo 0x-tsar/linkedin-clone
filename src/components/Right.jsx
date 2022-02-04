@@ -15,6 +15,33 @@ export const Panel = styled.div`
   margin: 20px auto;
 `;
 
+export const Panel2 = styled.div`
+  background-color: white;
+  border-radius: 15px;
+  width: 350px;
+  height: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+`;
+
+export const Panel3 = styled.div`
+  border-radius: 15px;
+  width: 350px;
+  height: 100px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  color: #959595;
+  flex-wrap: wrap;
+  align-content: center;
+
+  p {
+    margin: 5px 0;
+    /* padding: 0; */
+    margin-right: 10px;
+  }
+`;
+
 export const Item = styled.div`
   width: calc(100% - 20px);
   height: 100px;
@@ -102,6 +129,16 @@ export const Right = () => {
           View all recommendations ➡
         </h3>
       </Panel>
+      <Panel2></Panel2>
+      <Panel3>
+        <p>About</p>
+        <p>Accessibility</p>
+        <p>Help Center</p>
+        <p>Privacy & Terms ⌄</p>
+        <p>Ad Choices</p>
+        <p>Advertising</p>
+        <p>Busines Services ⌄</p>
+      </Panel3>
     </RightComp>
   );
 };

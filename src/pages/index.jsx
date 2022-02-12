@@ -6,6 +6,8 @@ import Header from "../components/Header";
 import Left from "../components/Left";
 import Middle from "../components/Middle";
 import Right from "../components/Right";
+import { Context } from "../context/context";
+import { useContext } from "react";
 
 export const Container = styled.div`
   display: grid;
@@ -17,6 +19,9 @@ export const Container = styled.div`
 `;
 
 export default function Home() {
+  const { theme, setTheme } = useContext(Context);
+  console.log(theme);
+
   return (
     <Container>
       <Head>

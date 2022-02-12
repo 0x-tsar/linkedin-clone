@@ -5,6 +5,7 @@ export const HeaderComp = styled.div`
   grid-area: header;
   background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  z-index: 99;
 `;
 
 export const Header = () => {

@@ -4,12 +4,18 @@ import { brightTheme, darkTheme } from "../themes/themes";
 
 export const LeftComp = styled.div`
   grid-area: left;
+
+  color: ${(props) =>
+    props.theme === "bright" ? darkTheme.daker : darkTheme.card};
+
   background-color: ${(props) =>
     props.theme === "bright" ? brightTheme.bg : darkTheme.bg};
 `;
 
 export const Panel = styled.div`
-  background-color: white;
+  background-color: ${(props) =>
+    props.theme === "bright" ? brightTheme.card : darkTheme.darker};
+
   border-radius: 15px;
   width: 350px;
   height: 600px;
@@ -18,7 +24,7 @@ export const Panel = styled.div`
 
 export const Panel2 = styled.div`
   background-color: ${(props) =>
-    props.theme === "bright" ? brightTheme.card : darkTheme.card};
+    props.theme === "bright" ? brightTheme.card : darkTheme.darker};
   border-radius: 15px;
   width: 350px;
   height: 200px;
@@ -39,7 +45,7 @@ export const Left = ({ theme, brightTheme, darkTheme }) => {
   return (
     <>
       <LeftComp theme={theme} brightTheme={brightTheme} darkTheme={darkTheme}>
-        <Panel>
+        <Panel theme={theme} brightTheme={brightTheme} darkTheme={darkTheme}>
           <Div>
             <div>
               {/* <img src="" alt="" /> */}
@@ -139,7 +145,7 @@ export const Left = ({ theme, brightTheme, darkTheme }) => {
             </p>
           </Div>
         </Panel>
-        <Panel2>
+        <Panel2 theme={theme} brightTheme={brightTheme} darkTheme={darkTheme}>
           <p
             style={{
               margin: "10px 40px",

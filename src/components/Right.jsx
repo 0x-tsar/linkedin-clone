@@ -4,17 +4,18 @@ import { brightTheme, darkTheme } from "../themes/themes";
 
 export const RightComp = styled.div`
   grid-area: right;
-  /* background-color: #e6e6e6; */
+
+  color: ${(props) => (props.theme === "bright" ? "black" : "white")};
+
   background-color: ${(props) =>
     props.theme === "bright" ? brightTheme.bg : darkTheme.bg};
 `;
 
 export const Panel = styled.div`
-  color: ${(props) =>
-    props.theme === "bright" ? darkTheme.text : brightTheme.text};
   //
   background-color: ${(props) =>
-    props.theme === "bright" ? brightTheme.card : darkTheme.card};
+    props.theme === "bright" ? brightTheme.card : darkTheme.darker};
+
   border-radius: 15px;
   width: 350px;
   height: 450px;
@@ -30,7 +31,8 @@ export const Panel2 = styled.div`
   color: ${(props) =>
     props.theme === "bright" ? darkTheme.text : brightTheme.text};
   background-color: ${(props) =>
-    props.theme === "bright" ? brightTheme.card : darkTheme.card};
+    props.theme === "bright" ? brightTheme.card : darkTheme.darker};
+
   border-radius: 15px;
   width: 350px;
   height: 200px;

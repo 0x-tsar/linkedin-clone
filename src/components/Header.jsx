@@ -29,10 +29,10 @@ export const Header = () => {
         }}
         onClick={(e) => {
           if (state.includes("🌜 Dark")) {
-            setTheme("bright");
+            setTheme("dark");
             setState("🌞 Bright");
           } else {
-            setTheme("dark");
+            setTheme("bright");
             setState("🌜 Dark");
           }
         }}

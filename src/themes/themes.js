@@ -9,6 +9,7 @@ export const brightTheme = {
   purple: "#6518ac",
   border: "#e6e6e6",
   card: "#ffffff",
+  darker: "rgba(30,30,30)",
 };
 
 export const darkTheme = {
@@ -21,4 +22,5 @@ export const darkTheme = {
   purple: "#6518ac",
   border: "rgba(255,255,255,0.1)",
   card: "#ffffff",
+  darker: "rgba(30,30,30)",
 };

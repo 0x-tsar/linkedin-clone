@@ -1,37 +1,55 @@
 import React from "react";
 import styled from "styled-components";
+import { brightTheme, darkTheme } from "../themes/themes";
 
 export const RightComp = styled.div`
   grid-area: right;
-  background-color: #e6e6e6;
+  /* background-color: #e6e6e6; */
+  background-color: ${(props) =>
+    props.theme === "bright" ? brightTheme.bg : darkTheme.bg};
 `;
 
 export const Panel = styled.div`
-  background-color: white;
+  color: ${(props) =>
+    props.theme === "bright" ? darkTheme.text : brightTheme.text};
+  //
+  background-color: ${(props) =>
+    props.theme === "bright" ? brightTheme.card : darkTheme.card};
   border-radius: 15px;
   width: 350px;
   height: 450px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  /* border: 1px solid rgba(0, 0, 0, 0.2); */
+  border: ${(props) =>
+    props.theme === "bright"
+      ? `1px solid ${brightTheme.border}`
+      : `1px solid ${darkTheme.border}`};
   margin: 20px auto;
 `;
 
 export const Panel2 = styled.div`
-  background-color: white;
+  color: ${(props) =>
+    props.theme === "bright" ? darkTheme.text : brightTheme.text};
+  background-color: ${(props) =>
+    props.theme === "bright" ? brightTheme.card : darkTheme.card};
   border-radius: 15px;
   width: 350px;
   height: 200px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: ${(props) =>
+    props.theme === "bright"
+      ? `1px solid ${brightTheme.border}`
+      : `1px solid ${darkTheme.border}`};
   margin: 20px auto;
 `;
 
 export const Panel3 = styled.div`
+  color: ${(props) =>
+    props.theme === "bright" ? brightTheme.text : darkTheme.text};
   border-radius: 15px;
   width: 350px;
   height: 100px;
   margin: 10px auto;
   display: flex;
   justify-content: center;
-  color: #959595;
   flex-wrap: wrap;
   align-content: center;
 
@@ -72,11 +90,17 @@ export const ItemComponent = () => {
         }}
       ></div>
       <div>
-        <p style={{ marginBottom: 0, color: "gray", fontSize: "14px" }}>Name</p>
         <p
           style={{
             marginBottom: 0,
-            color: "gray",
+            fontSize: "14px",
+          }}
+        >
+          Name
+        </p>
+        <p
+          style={{
+            marginBottom: 0,
             fontSize: "14px",
             marginTop: "5px",
             fontWeight: 400,
@@ -104,10 +128,10 @@ export const ItemComponent = () => {
   );
 };
 
-export const Right = () => {
+export const Right = ({ theme, brightTheme, darkTheme }) => {
   return (
-    <RightComp>
-      <Panel>
+    <RightComp theme={theme} brightTheme={brightTheme} darkTheme={darkTheme}>
+      <Panel theme={theme} brightTheme={brightTheme} darkTheme={darkTheme}>
         <h3 style={{ marginLeft: "20px", marginBottom: "20px" }}>
           Add to your feed
           <p
@@ -126,12 +150,21 @@ export const Right = () => {
           <ItemComponent />
         </h3>
 
-        <h3 style={{ color: "gray", fontWeight: "400", margin: "20px" }}>
+        <h3
+          style={{
+            fontWeight: "400",
+            margin: "20px",
+          }}
+        >
           View all recommendations ➡
         </h3>
       </Panel>
-      <Panel2></Panel2>
-      <Panel3>
+      <Panel2
+        theme={theme}
+        brightTheme={brightTheme}
+        darkTheme={darkTheme}
+      ></Panel2>
+      <Panel3 theme={theme} brightTheme={brightTheme} darkTheme={darkTheme}>
         <p>About</p>
         <p>Accessibility</p>
         <p>Help Center</p>

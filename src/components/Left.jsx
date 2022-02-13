@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { brightTheme, darkTheme } from "../themes/themes";
 
 export const LeftComp = styled.div`
   grid-area: left;
-  background-color: #e6e6e6;
+  background-color: ${(props) =>
+    props.theme === "bright" ? brightTheme.bg : darkTheme.bg};
 `;
 
 export const Panel = styled.div`
@@ -15,7 +17,8 @@ export const Panel = styled.div`
 `;
 
 export const Panel2 = styled.div`
-  background-color: white;
+  background-color: ${(props) =>
+    props.theme === "bright" ? brightTheme.card : darkTheme.card};
   border-radius: 15px;
   width: 350px;
   height: 200px;
@@ -23,7 +26,8 @@ export const Panel2 = styled.div`
 `;
 
 export const Line = styled.div`
-  background-color: #e6e6e6;
+  /* background-color: #e6e6e6; */
+
   width: 100%;
   height: 2px;
   margin: 20px auto;
@@ -31,10 +35,10 @@ export const Line = styled.div`
 
 export const Div = styled.div``;
 
-export const Left = () => {
+export const Left = ({ theme, brightTheme, darkTheme }) => {
   return (
     <>
-      <LeftComp>
+      <LeftComp theme={theme} brightTheme={brightTheme} darkTheme={darkTheme}>
         <Panel>
           <Div>
             <div>
@@ -64,7 +68,7 @@ export const Left = () => {
             <h2 style={{ textAlign: "center" }}>Gustavo Fernandes</h2>
             <p
               style={{
-                color: "gray",
+                // color: "gray",
                 margin: "0 20px",
                 fontStyle: "italic",
                 justifyContent: "center",

@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { brightTheme, darkTheme } from "../themes/themes";
 
 export const MiddleComp = styled.div`
   grid-area: middle;
-  background-color: #e6e6e6;
+  background-color: ${(props) =>
+    props.theme === "bright" ? props.brightTheme.bg : props.darkTheme.bg};
 `;
 
 export const PostSomething = () => {
@@ -34,9 +36,10 @@ export const PostSomething = () => {
             width: "90%",
             height: "70px",
             borderRadius: "50px",
-            backgroundColor: "black",
             margin: "10px",
             outline: "none",
+
+            border: "1px solid rgba(0,0,0,0.2)",
             fontSize: "20px",
             padding: "10px 20px",
             // fontFamily: "monospace",
@@ -71,6 +74,10 @@ export const PostNormal = () => {
     margin-top: 20px;
   `;
 
+  const P = styled.div`
+    height: 20px;
+  `;
+
   return (
     <Panel>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -83,29 +90,41 @@ export const PostNormal = () => {
             margin: "10px",
           }}
         ></div>
-        <p style={{ marginRight: "10px" }}>Name Profile </p>
-        <p style={{ marginRight: "10px" }}>·</p>
-        <p
+        <P style={{ marginRight: "10px" }}>Name Profile </P>
+        <P style={{ marginRight: "10px" }}>·</P>
+        <P
           style={{
-            // backgroundColor: "blue",
+            flexWrap: "wrap", // backgroundColor: "blue",
+            // display: "inline-block",
+            // width: "calc(100% - 220px)",
+            // width: "calc(100% - 120px - 92.92px - 4.44px)",
+            backgroundColor: "red",
             marginRight: "10px",
           }}
         >
           3rd+
-        </p>
+        </P>
+        <P style={{ flexWrap: "wrap" }}>qwew</P>
         {/* <div style={{ width: "60%", marginRight: "10px" }}>
           <p style={{ float: "right", position: "relative" }}>🔹</p>
         </div> */}
-        <p>qweq</p>
       </div>
     </Panel>
   );
 };
-export const Middle = () => {
+export const Middle = ({ theme, darkTheme, brightTheme }) => {
   return (
-    <MiddleComp>
-      <PostSomething></PostSomething>
-      <PostNormal></PostNormal>
+    <MiddleComp theme={theme} brightTheme={brightTheme} darkTheme={darkTheme}>
+      <PostSomething
+        theme={theme}
+        brightTheme={brightTheme}
+        darkTheme={darkTheme}
+      ></PostSomething>
+      <PostNormal
+        theme={theme}
+        brightTheme={brightTheme}
+        darkTheme={darkTheme}
+      ></PostNormal>
     </MiddleComp>
   );
 };

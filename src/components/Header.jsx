@@ -26,8 +26,6 @@ export const Panel = styled.div`
   display: flex;
   justify-content: flex-start;
   margin: 0 100px;
-  /* width: 100%;
-  height: 100%; */
 `;
 
 export const ItemPanel = styled.div`

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../../styles/Home.module.css";
+// import styles from "../../styles/Home.module.css";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Left from "../components/Left";
@@ -17,7 +17,13 @@ export const Container = styled.div`
   grid-template-areas:
     "header header header"
     "left middle right";
-  background-color: #e6e6e6;
+
+  background-color: ${(props) =>
+    props.theme === "bright" ? "#e6e6e6e6" : darkTheme.darker};
+  /* background-color: blue;
+  min-height: fit-content;
+  height: min-content; */
+  /* overflow-y: hidden; */
 `;
 
 export default function Home() {

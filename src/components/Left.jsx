@@ -4,17 +4,16 @@ import { brightTheme, darkTheme } from "../themes/themes";
 
 export const LeftComp = styled.div`
   grid-area: left;
-  margin-left: 20px;
-  /* margin-top: 80px; */
-
-  /* position: fixed;
-  left: 0px; */
+  /* margin: 80px 0 0 100px; */
+  /* position: fixed; */
+  /* left: 0px; */
+  /* top: 0; */
 
   color: ${(props) =>
     props.theme === "bright" ? darkTheme.daker : darkTheme.card};
 
-  /* background-color: ${(props) =>
-    props.theme === "bright" ? brightTheme.bg : darkTheme.bg}; */
+  background-color: ${(props) =>
+    props.theme === "bright" ? brightTheme.bg : darkTheme.bg};
 `;
 
 export const Panel = styled.div`

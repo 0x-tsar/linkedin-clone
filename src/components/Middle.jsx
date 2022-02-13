@@ -6,6 +6,11 @@ export const MiddleComp = styled.div`
   grid-area: middle;
   background-color: ${(props) =>
     props.theme === "bright" ? props.brightTheme.bg : props.darkTheme.bg};
+
+  overflow-y: scroll;
+  /* background-color: blue;
+  min-height: fit-content;
+  height: min-content; */
 `;
 
 export const PostSomething = () => {

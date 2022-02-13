@@ -6,6 +6,9 @@ import { darkTheme } from "../themes/themes";
 
 export const HeaderComp = styled.div`
   grid-area: header;
+  position: fixed;
+  width: 100vw;
+
   background-color: ${(props) =>
     props.theme === "bright" ? "white" : darkTheme.darker};
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -22,9 +25,9 @@ export const HeaderComp = styled.div`
 export const Panel = styled.div`
   display: flex;
   justify-content: flex-start;
-  width: 100%;
-  height: 100%;
   margin: 0 100px;
+  /* width: 100%;
+  height: 100%; */
 `;
 
 export const ItemPanel = styled.div`

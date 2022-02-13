@@ -38,11 +38,9 @@ export const PostSomething = () => {
             borderRadius: "50px",
             margin: "10px",
             outline: "none",
-
             border: "1px solid rgba(0,0,0,0.2)",
             fontSize: "20px",
             padding: "10px 20px",
-            // fontFamily: "monospace",
           }}
         />
       </div>
@@ -67,48 +65,57 @@ export const PostSomething = () => {
 
 export const PostNormal = () => {
   const Panel = styled.div`
-    height: 150px;
+    height: 900px;
     background-color: aliceblue;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     margin-top: 20px;
   `;
 
-  const P = styled.div`
-    height: 20px;
+  // const P = styled.div`
+  //   height: 20px;
+  // `;
+
+  const Holder = styled.div`
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "one"
+      "two"
+      "three";
+
+    margin: 0 0 30px 0;
+  `;
+
+  const One = styled.div`
+    grid-area: one;
+    background-color: yellow;
+  `;
+
+  const Two = styled.div`
+    grid-area: two;
+    background-color: purple;
+  `;
+
+  const Three = styled.div`
+    grid-area: three;
+    background-color: green;
   `;
 
   return (
     <Panel>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
-        <div
-          style={{
-            width: "70px",
-            height: "70px",
-            borderRadius: "35px",
-            backgroundColor: "black",
-            margin: "10px",
-          }}
-        ></div>
-        <P style={{ marginRight: "10px" }}>Name Profile </P>
-        <P style={{ marginRight: "10px" }}>·</P>
-        <P
-          style={{
-            flexWrap: "wrap", // backgroundColor: "blue",
-            // display: "inline-block",
-            // width: "calc(100% - 220px)",
-            // width: "calc(100% - 120px - 92.92px - 4.44px)",
-            backgroundColor: "red",
-            marginRight: "10px",
-          }}
-        >
-          3rd+
-        </P>
-        <P style={{ flexWrap: "wrap" }}>qwew</P>
-        {/* <div style={{ width: "60%", marginRight: "10px" }}>
-          <p style={{ float: "right", position: "relative" }}>🔹</p>
-        </div> */}
-      </div>
+      <Holder>
+        <One></One>
+        <Two></Two>
+        <Three></Three>
+      </Holder>
+      <Holder>
+        <One></One>
+        <Two></Two>
+        <Three></Three>
+      </Holder>
     </Panel>
   );
 };
